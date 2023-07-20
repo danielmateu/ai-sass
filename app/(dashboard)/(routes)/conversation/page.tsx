@@ -1,14 +1,18 @@
 "use client"
 
-import { Heading } from "@/components/Heading"
+// Next Hooks
+import { useRouter } from "next/navigation"
+// React Hooks
+import { useState } from "react"
 
-import { MessageSquare } from "lucide-react"
+// OpenAI
+import { ChatCompletionRequestMessage } from "openai"
 
+// form imports
 import * as z from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { formSchema } from "./constants"
-
 import {
     Form,
     FormControl,
@@ -18,12 +22,23 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form"
+// Conection to API
+import axios from "axios"
 
+// Our Components
+import { Heading } from "@/components/Heading"
+// UI Components
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+// Icons
+import { MessageSquare } from "lucide-react"
+
 
 
 const ConversationPage = () => {
+
+    const router = useRouter()
+    const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([])
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -33,8 +48,28 @@ const ConversationPage = () => {
     })
 
     const isLoading = form.formState.isSubmitting
+
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        console.log(values)
+        try {
+            const userMessage: ChatCompletionRequestMessage = {
+                role: "user",
+                content: values.prompt,
+            }
+            const newMessages = [...messages, userMessage]
+
+            const response = await axios.post("/api/conversation", {
+                messages: newMessages,
+            })
+            setMessages((current) => [...current, userMessage, response.data])
+
+            form.reset()
+
+        } catch (error: any) {
+            // TODO: Open Pro Modal
+            console.log(error);
+        } finally {
+            router.refresh()
+        }
     }
 
     return (
@@ -76,7 +111,15 @@ const ConversationPage = () => {
                     </Form>
                 </div>
                 <div className="space-y-4 mt-4">
-                    Messages content
+                    {/* Messages content */}
+                    <div className="flex flex-col col-reverse gap-y-4">
+                        {messages.map((message) => (
+
+                            <div key={message.content}>
+                                {message.content}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
