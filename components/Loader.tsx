@@ -5,18 +5,18 @@ export const Loader = () => {
     return (
         <>
             <div className='h-full flex flex-col gap-y-4 items-center justify-center'>
-                <div className="w-32 h-32 animate-spin">
+                <div className="w-9 h-9 animate-spin">
                     <Image
-                        alt="Logo"
-                        src="/logo.png"
+                        alt="loading logo"
+                        src="/loading.png"
                         fill
                         className='rounded-full'
                     />
                 </div>
+                <p className='text-sm text-muted-foreground'>
+                    Nuko esta pensando...
+                </p>
             </div>
-            <p className='text-sm text-muted-foreground'>
-                Nuko esta pensando...
-            </p>
         </>
     )
 }

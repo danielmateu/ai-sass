@@ -1,7 +1,8 @@
-import { Navbar } from '@/components/Navbar'
+// import { Navbar } from '@/components/Navbar'
 import { Sidebar } from '@/components/Sidebar'
 import React from 'react'
 import { getApiLimitCount } from '../../lib/api-limit';
+import Navbar from '@/components/Navbar';
 
 const DashboardLayout = async ({
     children
