@@ -19,7 +19,7 @@ import axios from "axios"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 // Icons
-import { Music, VideoIcon } from "lucide-react"
+import { VideoIcon } from "lucide-react"
 import { Empty } from "@/components/Empty"
 // Our Components
 import { Heading } from "@/components/Heading"
@@ -30,7 +30,7 @@ const VideoPage = () => {
 
     const router = useRouter()
 
-    const [Video, setVideo] = useState<string>()
+    const [video, setVideo] = useState<string>()
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -45,8 +45,8 @@ const VideoPage = () => {
         try {
             setVideo(undefined)
 
-            const response = await axios.post("/api/Video", values)
-            setVideo(response.data.audio)
+            const response = await axios.post("/api/video", values)
+            setVideo(response.data[0])
 
             form.reset()
 
@@ -64,8 +64,8 @@ const VideoPage = () => {
                 title="Generador de videos"
                 description="Genera videos a partir de un prompt"
                 icon={VideoIcon}
-                iconColor="text-green-500"
-                bgColor="bg-green-500/10"
+                iconColor="text-orange-700"
+                bgColor="bg-orange-700/10"
             />
             <div className="px-4 lg:px-8">
                 <div>
@@ -105,16 +105,19 @@ const VideoPage = () => {
                         </div>
                     )}
                     {
-                        !Video && !isLoading && (
+                        !video && !isLoading && (
                             <Empty
                                 label="Que esperas para generar videos?"
                             />
                         )
                     }
-                    {Video && (
-                        <audio controls className="w-full mt-8">
-                            <source src={Video} type="audio/mpeg" />
-                        </audio>
+                    {video && (
+                        <video
+                            className="w-full aspect-video mt-8 rounded-lg border bg-black"
+                            controls
+                        >
+                            <source src={video} type="video/mp4" />
+                        </video>
                     )}
                 </div>
             </div>
