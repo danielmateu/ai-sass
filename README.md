@@ -12,3 +12,9 @@ Para hacer correr la DB -> npx prisma studio
 Gestión de estado con Zustand
 
 Instalando Stripe para gestión de subscripciones
+A la hora del desarrollo siempre debemos estar logueados a Con el CLI de Stripe
+
+stripe login
+smiles-regard-wonder-honest
+
+
