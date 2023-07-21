@@ -25,12 +25,13 @@ import { Empty } from "@/components/Empty"
 // Our Components
 import { Heading } from "@/components/Heading"
 import { Loader } from "@/components/Loader"
+import { useProModal } from "@/hooks/use-pro-modal"
 
 
 const MusicPage = () => {
 
     const router = useRouter()
-
+    const proModal = useProModal()
     const [music, setMusic] = useState<string>()
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -53,6 +54,7 @@ const MusicPage = () => {
 
         } catch (error: any) {
             // TODO: Open Pro Modal
+            proModal.onOpen()
             console.log(error);
         } finally {
             router.refresh()
