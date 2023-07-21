@@ -7,3 +7,5 @@ Iconos -> https://lucide.dev/icons
 
 Prisma para la DB
 Para hacer correr la DB -> npx prisma studio
+
+Gestión de estado con Zustand

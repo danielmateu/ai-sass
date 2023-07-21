@@ -35,7 +35,7 @@ export const FreeCounter = ({
                             Usos gratuitos - {apiLimitCount} / {MAX_FREE_COUNTS}
                             <Progress value={(apiLimitCount / MAX_FREE_COUNTS) * 100} className="h-3" />
                         </p>
-                        <Button className="w-full" variant='premium'>
+                        <Button className="w-full opacity-80 hover:opacity-100 transition" variant='premium'>
                             Upgrade!
                             <Zap className="w-4 ml-2 fill-white" />
                         </Button>
