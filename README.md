@@ -6,6 +6,9 @@ Librería UI -> https://ui.shadcn.com/ Libreria para generar componentes que usa
 Iconos -> https://lucide.dev/icons
 
 Prisma para la DB
+Para crear la DB -> npx prisma db push
 Para hacer correr la DB -> npx prisma studio
 
 Gestión de estado con Zustand
+
+Instalando Stripe para gestión de subscripciones

@@ -34,9 +34,7 @@ const MobileSidebar = ({
                 </Button>
             </SheetTrigger>
             <SheetContent side='left' className="p-0">
-                <Sidebar
-                    apiLimitCount={apiLimitCount}
-                />
+                <Sidebar apiLimitCount={apiLimitCount} />
             </SheetContent>
         </Sheet>
     )
