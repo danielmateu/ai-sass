@@ -10,7 +10,7 @@ Para crear la DB ->
 npx prisma generate + npx prisma db push
 Para hacer correr la DB ->
 npx prisma studio
-Para eliminar la base de datos ->
+Para resetear la base de datos ->
 npx prisma migrate reset
 
 Gestión de estado con -> Zustand

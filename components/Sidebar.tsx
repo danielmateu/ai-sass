@@ -71,7 +71,7 @@ export const Sidebar = ({
 
     return (
 
-        <aside className="space-y-60 py-4 flex flex-col h-full bg-[#111827] text-white justify-between">
+        <aside className="space-y-14 py-4 flex flex-col h-full bg-[#111827] text-white justify-between">
             <div className="px-3 py-2 flex-1">
                 <Link href='/dashboard' className="flex items-center pl-3 mb-14">
                     <div className="relative w-8 h-8 mr-4">
