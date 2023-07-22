@@ -49,7 +49,9 @@ export async function POST(req: Request) {
             size: resolution
         })
 
-        await increaseApiLimit();
+        if (!isPro) {
+            await increaseApiLimit();
+        }
 
         return NextResponse.json(response.data.data)
 
