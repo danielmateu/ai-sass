@@ -6,8 +6,12 @@ Librería UI -> https://ui.shadcn.com/ Libreria para generar componentes que usa
 Iconos -> https://lucide.dev/icons
 
 Prisma para la DB
-Para crear la DB -> npx prisma db push
-Para hacer correr la DB -> npx prisma studio
+Para crear la DB ->
+npx prisma generate + npx prisma db push
+Para hacer correr la DB ->
+npx prisma studio
+Para eliminar la base de datos ->
+npx prisma migrate reset
 
 Gestión de estado con Zustand
 
@@ -16,5 +20,3 @@ A la hora del desarrollo siempre debemos estar logueados a Con el CLI de Stripe
 
 stripe login
 smiles-regard-wonder-honest
-
-
