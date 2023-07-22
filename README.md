@@ -22,3 +22,5 @@ stripe login
 smiles-regard-wonder-honest
 
 react-hot-toast para el manejo de errores en el front
+
+Crisp -> Gestión para Customer Support
