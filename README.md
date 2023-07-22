@@ -13,10 +13,12 @@ npx prisma studio
 Para eliminar la base de datos ->
 npx prisma migrate reset
 
-Gestión de estado con Zustand
+Gestión de estado con -> Zustand
 
 Instalando Stripe para gestión de subscripciones
 A la hora del desarrollo siempre debemos estar logueados a Con el CLI de Stripe
 
 stripe login
 smiles-regard-wonder-honest
+
+react-hot-toast para el manejo de errores en el front

@@ -32,7 +32,7 @@ import Image from "next/image"
 import { Card, CardFooter } from "@/components/ui/card"
 import { useProModal } from "@/hooks/use-pro-modal"
 
-
+import toast from "react-hot-toast"
 const ImagePage = () => {
 
     const router = useRouter()
@@ -63,7 +63,7 @@ const ImagePage = () => {
         } catch (error: any) {
             // TODO: Open Pro Modal
             proModal.onOpen()
-
+            toast.error('Error al generar la imagen')
         } finally {
             router.refresh()
         }

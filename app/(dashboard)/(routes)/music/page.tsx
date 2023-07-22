@@ -26,6 +26,7 @@ import { Empty } from "@/components/Empty"
 import { Heading } from "@/components/Heading"
 import { Loader } from "@/components/Loader"
 import { useProModal } from "@/hooks/use-pro-modal"
+import toast from 'react-hot-toast';
 
 
 const MusicPage = () => {
@@ -55,7 +56,7 @@ const MusicPage = () => {
         } catch (error: any) {
             // TODO: Open Pro Modal
             proModal.onOpen()
-            console.log(error);
+            toast.error('No se pudo generar la música')
         } finally {
             router.refresh()
         }

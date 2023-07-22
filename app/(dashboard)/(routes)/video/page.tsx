@@ -25,6 +25,7 @@ import { Empty } from "@/components/Empty"
 import { Heading } from "@/components/Heading"
 import { Loader } from "@/components/Loader"
 import { useProModal } from "@/hooks/use-pro-modal"
+import toast from 'react-hot-toast';
 
 
 const VideoPage = () => {
@@ -54,7 +55,7 @@ const VideoPage = () => {
         } catch (error: any) {
             // TODO: Open Pro Modal
             proModal.onOpen()
-            // console.log(error);
+            toast.error('No se pudo generar el video')
         } finally {
             router.refresh()
         }

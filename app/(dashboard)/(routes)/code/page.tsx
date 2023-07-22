@@ -31,7 +31,7 @@ import { BotAvatar } from "@/components/bot-avatar"
 import ReactMarkdown from "react-markdown"
 import { useProModal } from "@/hooks/use-pro-modal"
 
-
+import toast from "react-hot-toast"
 
 const CodePage = () => {
 
@@ -66,6 +66,7 @@ const CodePage = () => {
         } catch (error: any) {
             // TODO: Open Pro Modal
             proModal.onOpen()
+            toast.error('Error al generar el código')
 
         } finally {
             router.refresh()
