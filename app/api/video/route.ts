@@ -4,6 +4,7 @@ import { Configuration, OpenAIApi } from "openai";
 import Replicate from "replicate";
 
 import { checkApiLimit, increaseApiLimit } from "@/lib/api-limit";
+import { checkSubscription } from "@/lib/subscription";
 
 
 const replicate = new Replicate({
@@ -25,8 +26,9 @@ export async function POST(req: Request) {
         }
 
         const freeTrial = await checkApiLimit();
+        const isPro = await checkSubscription();
 
-        if (!freeTrial) {
+        if (!freeTrial && !isPro) {
             return new NextResponse('Plan gratuito finalizado', { status: 403 })
         }
 
