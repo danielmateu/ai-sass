@@ -24,3 +24,5 @@ smiles-regard-wonder-honest
 react-hot-toast para el manejo de errores en el front
 
 Crisp -> Gestión para Customer Support
+
+typewriter-effect para el efecto en el texto en Landing
