@@ -1,0 +1,19 @@
+¡Hola a todos! Os presento a Nuko AI, estoy emocionado de compartir con todos vosotros el último proyecto en el que he estado enfocado.
+
+Nuko AI es una aplicación que utiliza la inteligencia artificial de Open IA para generar contenido creativo en múltiples formatos, incluyendo texto, código, audio, imágenes y video.
+
+Hemos integrado Clerk para garantizar una experiencia de inicio de sesión y registro segura para nuestros usuarios. Tus datos personales estarán protegidos con las últimas medidas de seguridad.
+
+Gracias a Crisp, hemos implementado una gestión de atención al usuario rápida y eficiente. Si necesitas ayuda o tienes alguna pregunta, nuestro equipo de soporte (es decir, YO!) estará listo para asistirte.
+
+Con Shadcn, hemos agilizado la creación de componentes en la aplicación, lo que nos permite implementar nuevas funciones y actualizaciones de manera más rápida y eficiente.
+
+Para el manejo del estado, se ha utilizado Zustand esta vez, con el que se ha logrado un manejo del estado de la aplicación más eficiente y escalable. Esto se traduce en una experiencia de usuario más fluida y sin interrupciones.
+
+Para la DB he implementado Prisma para gestionar y almacenar datos en nuestra base de datos. Esto garantiza un rendimiento óptimo y una alta confiabilidad para todas tus creaciones.
+
+Por último añadir que el uso de esta aplicación está limitado ya que la conexión a la API de OPEN IA conlleva a costes. He puesto un límite mensual de 15€ ya que al fin y al cabo es una app de muestra y no me puedo permitir abrir más el grifo.
+
+Tambien avanzar que el tiempo de respuesta a la API es limitada, debido a los límites con Vercel, por lo que si la respuesta se alarga más de 6-8 segundos, saltará un error. Esto se corregiría pagando un extra, por lo que por ahora se queda así
+
+Espero que os parezca interesante, que le déis mucho amor y me mandéis vuestro feedback
